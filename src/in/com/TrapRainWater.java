@@ -9,8 +9,9 @@ public class TrapRainWater
 		int rightmax[]=new int[z];
 		int water =0;
 		//fill left side;
+		
 		leftmax[0]=n[0];
-		for (int i = 1; i < n.length; i++)
+		for(int i = 1; i < n.length; i++)
 		{
 			leftmax[i]=Math.max(leftmax[i-1], n[i]);
 		}
@@ -19,14 +20,11 @@ public class TrapRainWater
 		for(int i=z-2;i>=0;i--) {
 			rightmax[i]=Math.max(rightmax[i+1], n[i]);
 		}
-		for (int i = 0; i <n.length; i++) {
-			water+=Math.min(leftmax[i], rightmax[i])-n[i];
-			
+		for(int i = 0; i <n.length;i++){
+			water+=Math.min(leftmax[i],rightmax[i])-n[i];
 		}
 		return water;
 	}
-
-
 	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub

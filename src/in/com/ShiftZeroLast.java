@@ -8,21 +8,16 @@ public class ShiftZeroLast {
 			if(arr[i]!=0)
 			arr[index++]=arr[i];
 		}
-		
 		while(index<n) {
 			arr[index++]=0;
 		}
-		
 		for(int val :arr) {
 			System.out.print(val+" ");
 		}
 	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int arr[]= {1,2,0,3,0,4,5,6,7,0,9};
 		printdate(arr);
-
 	}
-
 }
