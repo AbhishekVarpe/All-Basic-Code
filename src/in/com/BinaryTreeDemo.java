@@ -59,6 +59,30 @@ public class BinaryTreeDemo {
 		
 		return 1+Math.max(leftside, rightside);
 	}
+	
+	public int SumOfNodes(Node root) {
+		if(root==null) 
+			return 0;
+		return root.data+SumOfNodes(root.left)+SumOfNodes(root.right);
+	}
+	
+	public int maxNode(Node root) {
+		if(root==null) {
+			return Integer.MIN_VALUE;
+		}
+		int left=maxNode(root.left);
+		int right=maxNode(root.right);
+		return Math.max(root.data, Math.max(left, right));
+	}
+	
+	public int minNode(Node root) {
+		if(root==null) {
+			return Integer.MAX_VALUE;
+		}
+		int left=minNode(root.left);
+		int right=minNode(root.right);
+		return Math.min(root.data, Math.min(left, right));
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BinaryTreeDemo tree=new BinaryTreeDemo();
@@ -83,6 +107,15 @@ public class BinaryTreeDemo {
 
 		System.out.println(" ");
 		System.out.println("height is= "+tree.height(tree.root));
+		
+		System.out.println(" ");
+		System.out.println("sumof nodes is="+tree.SumOfNodes(tree.root));
+		
+		System.out.println(" ");
+		System.out.println("max nodes is="+tree.maxNode(tree.root));
+
+		System.out.println(" ");
+		System.out.println("min nodes is="+tree.minNode(tree.root));
 	}
 
 }
