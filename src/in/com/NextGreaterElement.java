@@ -13,7 +13,6 @@ public class NextGreaterElement {
 			while(!stack.isEmpty() && stack.peek() <=arr[i]) //25<=arr[3]
 			{
 				stack.pop();
-				
 			}
 				if(stack.isEmpty())//
 				{
@@ -23,9 +22,6 @@ public class NextGreaterElement {
 				}
 				stack.push(arr[i]);//25
 			}
-			
-			
-		
 		for(int val :result)
 		{
 			System.out.print(val+ " ");
@@ -36,7 +32,8 @@ public class NextGreaterElement {
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		int arr[]= {4, 5, 2, 25};
+		//int arr[]= {4, 5, 2, 25};
+		int arr[]= {6,8,0,1,3};
 		System.out.println("data is");
 		printArr(arr);
 
