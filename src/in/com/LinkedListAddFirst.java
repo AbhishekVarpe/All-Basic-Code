@@ -128,6 +128,43 @@ public class LinkedListAddFirst {
 		return itofind;
 
 	}
+	 // 5️⃣ Delete the middle node
+    Node deleteMiddle(Node head) {
+        if (head == null || head.next == null)
+            return null;
+
+        Node slow = head, fast = head, prev = null;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            prev = slow;
+            slow = slow.next;
+        }
+        prev.next = slow.next; // skip middle
+        return head;
+    }
+    
+    // 6️⃣ Swap nodes in pairs (1→2→3→4 → 2→1→4→3)
+    Node swapPairs(Node head) {
+        if (head == null || head.next == null)
+            return head;
+
+        Node temp = head.next;
+        head.next = swapPairs(temp.next);
+        temp.next = head;
+        return temp;
+    }
+    // 4️⃣ Delete alternate nodes
+    void deleteAlternate(Node head) {
+        if (head == null)
+            return;
+
+        Node current = head;
+        while (current != null && current.next != null) {
+            current.next = current.next.next;
+            current = current.next;
+        }
+    }
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LinkedListAddFirst linkedListAddFirst=new LinkedListAddFirst();
